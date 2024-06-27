@@ -1,0 +1,58 @@
+<div class="div-centrado">
+    <form [formGroup]="getRegistro" novalidate (submit)="enviar($event)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email"
+          [ngClass]="{'is-invalid': hasErrors('email', 'required') || hasErrors('email', 'email')}">
+          @if (hasErrors('email', 'required')) 
+          {
+              <span class="text-danger">Campo requerido</span>
+          }
+          @if (hasErrors('email', 'email')) 
+          {
+              <span class="text-danger">Formato inválido</span>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+          [ngClass]="{'is-invalid': hasErrors('password', 'required')}">
+          @if (hasErrors('password', 'required')) 
+          {
+            <span class="text-danger">Clave obligatoria</span>
+          }
+        </div>
+
+        <div class="mb-3">
+            <label for="identification" class="form-label">Identificación</label>
+            <input type="identification" class="form-control" id="identification" aria-describedby="identification" formControlName="identification"
+            [ngClass]="{'is-invalid': hasErrors('identification', 'identification') || hasErrors('identification', 'required')}" 
+            placeholder="Colocar DNI (solo digitos)">
+            @if (hasErrors('identification', 'identification')) 
+            {
+                <span class="text-danger">Campo requerido</span>
+            }
+            @if (hasErrors('identification', 'required')) 
+            {
+                <span class="text-danger">Formato inválido</span>
+            }
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre y apellido completo</label>
+          <input type="name" class="form-control" id="name" aria-describedby="name" formControlName="name"
+          [ngClass]="{'is-invalid': hasErrors('name', 'name') || hasErrors('name', 'minlength')}">
+          @if (hasErrors('name', 'name')) 
+          {
+              <span class="text-danger">Campo requerido</span>
+          }
+          @if (hasErrors('name', 'minlength')) 
+          {
+              <span class="text-danger">El nombre debe contener máximo 3 caracteres</span>
+          }
+        </div>  
+        
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+</div>

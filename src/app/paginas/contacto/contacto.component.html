@@ -1,0 +1,31 @@
+<div  class="div-centrado">
+    <form [formGroup]="getContacto" novalidate (submit)="enviar($event)">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@gmail.com" formControlName="email"
+            [ngClass]="{'is-invalid': hasErrors('email', 'required')}">
+            @if (hasErrors('email', 'required')) 
+            {
+              <span class="text-danger">Correo obligatorio</span>
+            }
+        </div>
+          <br>
+          <br>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Escriba su consulta <small>(El comentario debe contener un minimo de 10 caracteres)</small></label>
+            <textarea class="form-control" id="comment" rows="3" formControlName="comment"  
+            [ngClass]="{'is-invalid': hasErrors('comment', 'required') || hasErrors('comment', 'minlength')}"> </textarea>
+            @if (hasErrors('comment', 'required')) 
+            {
+              <span class="text-danger">Comentario obligatorio</span>
+            }
+            <!-- @if (hasErrors('comment', 'minlength')) 
+            {
+              <span class="text-danger">El comentario debe contener minimo 10 caracteres</span>
+            } -->
+          </div>
+      
+      <button type="submit" class="btn btn-success">Enviar</button>
+      
+    </form>
+</div>

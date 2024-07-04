@@ -1,7 +1,7 @@
 <div class="div-centrado">
-  <form [formGroup]="getRegistro" novalidate (submit)="enviar($event)">
+  <form [formGroup]="getRegistro" (submit)="enviar($event)">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label"
+      <label for="email" class="form-label"
         >Correo electrónico</label
       >
       <input
@@ -82,6 +82,10 @@
       }
     </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" for="submit" class="btn btn-primary">Chequear</button>
+    <br>
+    <br>
+    <button type="submit" for="submit" class="btn btn-primary" routerLink="/inscripcion-detalle">Enviar</button>
+    
   </form>
 </div>

@@ -7,10 +7,12 @@ import { MateriasInfoComponent } from './paginas/materias-info/materias-info.com
 import { InstitucionalComponent } from './paginas/institucional/institucional.component';
 import { InscripcionesComponent } from './paginas/inscripciones/inscripciones.component';
 import { TiendaComponent } from "./paginas/tienda/tienda.component";
+import { InscripcionDetalleComponent } from './paginas/inscripcion-detalle/inscripcion-detalle.component';
 
 export const routes: Routes = [
     { path:'', component: InicioComponent },
     { path:'inscripciones', component: InscripcionesComponent },
+    { path:'inscripcion-detalle', component: InscripcionDetalleComponent },
     { path:'institucional', component: InstitucionalComponent },
     { path:'contacto', component: ContactoComponent },
     { path:'materias', component: MateriasComponent },

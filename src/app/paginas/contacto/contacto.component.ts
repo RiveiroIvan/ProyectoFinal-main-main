@@ -1,11 +1,12 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgClass],
+  imports: [CommonModule, ReactiveFormsModule, NgClass, RouterLink],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css',
 })
